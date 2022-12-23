@@ -279,7 +279,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        'Sign In',
+                        'Ingreso',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
