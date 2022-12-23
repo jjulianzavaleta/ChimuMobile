@@ -107,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
               activeColor: Colors.white,
               onChanged: (value) {
                 setState(() {
-                  _rememberMe = value!;
+                  _rememberMe = value;
                 });
               },
             ),
@@ -168,7 +168,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _buildSocialBtn(Function onTap, AssetImage logo) {
     return GestureDetector(
-    
+      onTap: onTap,
       child: Container(
         height: 60.0,
         width: 60.0,
@@ -279,7 +279,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        'Ingreso',
+                        'Sign In',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
@@ -309,8 +309,4 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-  
-  RaisedButton({required double elevation, required void Function() onPressed, required EdgeInsets padding, required RoundedRectangleBorder shape, required Color color, required Text child}) {}
-  
-  FlatButton({required void Function() onPressed, required EdgeInsets padding, required Text child}) {}
 }
