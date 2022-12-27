@@ -1,72 +1,45 @@
 import 'package:flutter/material.dart';
+void main() => runApp(const chimu());
 
-void main() {
-  runApp(const MyApp());
-}
+// ignore: camel_case_types
+class chimu extends StatelessWidget {
+  
+  const chimu({super.key});
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-       
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Chimu'),
+    return const MaterialApp(
+      title: "Chimu App",
+      home: Inicio(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-
-  final String title;
+class Inicio extends StatefulWidget {
+  const Inicio({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Inicio> createState() => _InicioState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
- 
-      _counter++;
-    });
-  }
-
+class _InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 56, 133, 221),
       appBar: AppBar(
-        
-        title: Text(widget.title),
+        title: const Text("ChimuApp"),
+
       ),
       body: Center(
-        child: Text(
-          'String',
-          style: TextStyle(
-            color: Color.fromARGB(255, 195, 106, 106),
-            backgroundColor: Color.fromARGB(255, 9, 35, 49),
-            fontSize: 25,
-            fontWeight: FontWeight.w800
+        child: ElevatedButton(
+          child: Text("Hola"),
+          onPressed: (){
+            var t = DateTime.now();
+              print(t);
+          }
           ),
         ),
-      ),
-      
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+      );
   }
+  
 }
