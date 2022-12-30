@@ -26,20 +26,64 @@ class _InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("ChimuApp"),
+      // appBar: AppBar(
+      //   title: const Text("ChimuApp"),
+
+      // ),
+      body: cuerpo(
 
       ),
-      body: Center(
-        child: ElevatedButton(
-          child: Text("Hola"),
-          onPressed: (){
-            var t = DateTime.now();
-              print(t);
-          }
-          ),
-        ),
-      );
+    );
   }
   
+}
+
+
+Widget cuerpo(){
+  return Container(
+     decoration: BoxDecoration(
+        image: DecorationImage(image : NetworkImage("https://i.pinimg.com/564x/76/21/40/762140944f91771490f53c6ef8f2ec03.jpg"),
+        fit: BoxFit.cover
+       )
+     ),
+    child: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          nombre(),
+          campoUsuario(),
+          campoContra(),
+        ],
+      )
+    ),
+  );
+}
+
+
+Widget nombre(){
+  return Text("Ingresa", style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 25.0, fontWeight: FontWeight.w800),);
+}
+Widget campoUsuario(){
+  return Container(
+    padding: EdgeInsets.symmetric(horizontal: 15,vertical: 5),
+    child: TextField(
+      decoration: InputDecoration(
+        hintText: "Usuario",
+        fillColor: Colors.white,
+        filled: true,
+      ),
+    ),
+  );
+}
+Widget campoContra(){
+  return Container(
+    padding: EdgeInsets.symmetric(horizontal: 15,vertical: 5),
+    child: TextField(
+      decoration: InputDecoration(
+        hintText: "Contraseña",
+        fillColor: Colors.white,
+        filled: true,
+      ),
+    ),
+  );
 }
