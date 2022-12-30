@@ -53,6 +53,7 @@ Widget cuerpo(){
           nombre(),
           campoUsuario(),
           campoContra(),
+          btnEntrar(),
         ],
       )
     ),
@@ -61,7 +62,7 @@ Widget cuerpo(){
 
 
 Widget nombre(){
-  return Text("Ingresa", style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 25.0, fontWeight: FontWeight.w800),);
+  return Text("Ingresar", style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 25.0, fontWeight: FontWeight.w800),);
 }
 Widget campoUsuario(){
   return Container(
@@ -79,6 +80,7 @@ Widget campoContra(){
   return Container(
     padding: EdgeInsets.symmetric(horizontal: 15,vertical: 5),
     child: TextField(
+      obscureText: true,
       decoration: InputDecoration(
         hintText: "Contraseña",
         fillColor: Colors.white,
@@ -86,4 +88,16 @@ Widget campoContra(){
       ),
     ),
   );
+}
+Widget btnEntrar(){
+  return Container(
+    child: ElevatedButton(
+      child: Text("Aceptar"),
+      onPressed: (){
+        var t = DateTime.now();
+        print(t);
+            }
+      ),
+  );
+
 }
